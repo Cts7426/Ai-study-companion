@@ -1,0 +1,16 @@
+# Environment
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+
+# Data
+uploads/
+chroma_db/
+
+# IDE
+.vscode/
+.idea/

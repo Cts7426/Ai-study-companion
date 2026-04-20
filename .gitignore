@@ -1,0 +1,20 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+
+# Backend
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/chroma_db/
+backend/uploads/
+backend/.env
+
+# Editor
+.vscode/
+.idea/

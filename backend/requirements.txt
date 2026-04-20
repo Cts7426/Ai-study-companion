@@ -1,0 +1,21 @@
+# === FastAPI Core ===
+fastapi
+uvicorn[standard]
+python-multipart
+
+# === Configuration ===
+pydantic-settings
+python-dotenv
+
+# === PDF Processing ===
+pymupdf
+
+# === Vector Database ===
+chromadb
+
+# === Embeddings ===
+sentence-transformers
+
+# === LLM Providers ===
+ollama
+google-generativeai
