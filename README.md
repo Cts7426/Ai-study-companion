@@ -1,71 +1,76 @@
 # 🧠 AI Study Companion
 
-Welcome to the **AI Study Companion**, an intelligent Retrieval-Augmented Generation (RAG) platform designed to revolutionize the way students interact with their learning materials. By leveraging the power of local or cloud LLMs, this platform turns your static PDF documents into dynamic, conversational, and interactive learning modules.
+chào mừng đến với **AI Study Companion**, Một nền tảng Tạo lập Tăng cường Truy xuất (RAG) thông minh được thiết kế để cách mạng hóa cách sinh viên tương tác với tài liệu học tập của họ. Bằng cách tận dụng sức mạnh của các hệ thống quản lý học tập cục bộ hoặc trên đám mây (LLM), nền tảng này biến các tài liệu PDF tĩnh của bạn thành các mô-đun học tập năng động, có tính đối thoại và tương tác.
 
-## ✨ Key Features
+## ✨ Tính năng
 
-1. **📄 Intelligent Document Analysis**: Upload any PDF document. The system processes, splits, and embeds the content into a vector database for instantaneous semantic search retrieval.
-2. **💬 Context-Aware Q&A (RAG)**: Ask questions about the uploaded document and receive precise, accurate answers that are **strictly sourced** from the text—minimizing AI hallucinations.
-3. **📊 One-Click Summarization**: Automatically extract core concepts, bullet points, and essential terminologies to save hours of reading.
-4. **🎯 Auto-Generated Quizzes**: Test your knowledge! The AI instantly functions as an examiner, creating a multi-choice quiz directly from the reading material complete with scoring and robust logical explanations.
-5. **🎛️ Dynamic Provider Fallback (Dual-LLM)**: Fully localized private data using **Ollama (Llama-3)** or swap seamlessly to blazing-fast cloud intelligence with **Google Gemini**.
-
----
-
-## 🛠️ Tech Stack & Architecture
-
-- **Frontend**: React, Vite, React Router, Lucide Icons. Engineered with a beautiful Dark-mode Glassmorphism UI for premium aesthetic user experience.
-- **Backend (API)**: Python FastAPI for ultra-fast asynchronous operations.
-- **RAG Engine**: Sentence Transformers (`all-MiniLM-L6-v2`) + PyMuPDF for document parsing.
-- **Database**: ChromaDB locally configured.
-- **AI Models**: Ollama / Google Gemini API.
+1. **📄 Phân tích tài liệu thông minh**: Tải lên bất kỳ tài liệu PDF nào. Hệ thống sẽ xử lý, chia nhỏ và nhúng nội dung vào cơ sở dữ liệu vector để truy xuất tìm kiếm ngữ nghĩa tức thì.
+2. **💬 Hỏi đáp theo ngữ cảnh (RAG)**: Đặt câu hỏi về tài liệu đã tải lên và nhận được câu trả lời chính xác, đầy đủ, được **lấy nguồn trực tiếp** từ văn bản — giảm thiểu tối đa các suy luận của AI.
+3. **📊 Tóm tắt chỉ với một cú nhấp chuột**: Tự động trích xuất các khái niệm cốt lõi, gạch đầu dòng và thuật ngữ thiết yếu để tiết kiệm hàng giờ đọc.
+4. **🎯 Bài kiểm tra tự động**: Kiểm tra kiến ​​thức của bạn! AI ngay lập tức hoạt động như một người chấm thi, tạo ra bài kiểm tra trắc nghiệm trực tiếp từ tài liệu đọc, hoàn chỉnh với điểm số và giải thích logic chặt chẽ.
+5. **🎛️ Chế độ dự phòng nhà cung cấp động (Dual-LLM)**: Dữ liệu riêng tư được bản địa hóa hoàn toàn bằng **Ollama (Llama-3)** hoặc chuyển đổi liền mạch sang trí tuệ đám mây siêu tốc với **Google Gemini**.
 
 ---
 
-## 🚀 Getting Started
+## 🛠️ Công nghệ & Kiến trúc
 
-Follow these steps to set up the app on your local machine:
+- **Giao diện người dùng**: React, Vite, React Router, Lucide Icons. Được thiết kế với giao diện Glassmorphism chế độ tối đẹp mắt cho trải nghiệm người dùng cao cấp.
 
-### 1. Backend Setup
+- **Máy chủ (API)**: Python FastAPI cho các thao tác bất đồng bộ cực nhanh.
 
-Launch a terminal and navigate to the `backend` folder:
+- **Công cụ RAG**: Sentence Transformers (`all-MiniLM-L6-v2`) + PyMuPDF để phân tích tài liệu.
+
+- **Cơ sở dữ liệu**: ChromaDB được cấu hình cục bộ.
+
+- **Mô hình AI**: Ollama / Google Gemini API.
+
+---
+
+## 🚀 Bắt đầu
+
+Hãy làm theo các bước sau để cài đặt ứng dụng trên máy tính của bạn:
+
+### 1. Thiết lập Backend
+
+Mở cửa sổ dòng lệnh và điều hướng đến thư mục `backend`:
+
 ```bash
 cd backend
 python -m venv venv
-# Activating Environment (Windows)
+# Kích hoạt môi trường (Windows)
 .\venv\Scripts\Activate
-# Install requirements
+# Cài đặt các yêu cầu
 pip install -r requirements.txt
 ```
 
-**Environment Variables**
-Ensure you configure the `.env` file in the `backend` root:
+**Biến môi trường**
+Đảm bảo bạn đã cấu hình tệp `.env` trong thư mục gốc `backend`:
 ```ini
-LLM_PROVIDER=gemini # Or 'ollama'
+LLM_PROVIDER=gemini # Hoặc 'ollama'
 GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-**Run Server**
+**Chạy máy chủ**
 ```bash
 uvicorn app.main:app --reload
 ```
-The API server will run at `http://localhost:8000`.
+Máy chủ API sẽ chạy tại `http://localhost:8000`.
 
-### 2. Frontend Setup
+### 2. Thiết lập giao diện người dùng
 
-Open a **separate** terminal and run:
+Mở một cửa sổ terminal **riêng biệt** và chạy:
+
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-The app is now running! Click the provided Localhost URL across the prompt, upload a cool PDF document, and start exploring.
+Ứng dụng hiện đang chạy! Nhấp vào URL Localhost được cung cấp trên dấu nhắc, tải lên một tài liệu PDF thú vị và bắt đầu khám phá.
 
 ---
+## 💡 Tại sao nên chọn AI Study Companion?
 
-## 💡 Why AI Study Companion?
+Thời đại thông tin văn bản kỹ thuật số khổng lồ đòi hỏi các quy tắc phân tích chuyên biệt. Không giống như các mô hình ngôn ngữ thô sơ như ChatGPT—thường bị "ảo tưởng" khi gặp phải những sắc thái thực tế chưa từng thấy trong dữ liệu huấn luyện—bot này hoạt động theo các ràng buộc _Tăng cường truy xuất_ nghiêm ngặt. Nó buộc AI phải hoạt động ở chế độ "Đọc và Trả lời", đảm bảo bản dịch tiếng Việt chính xác cao ngay cả khi xử lý tài liệu tiếng Anh phức tạp.
 
-The era of overwhelming digital text information requires specialized parsing rules. Unlike raw language models like ChatGPT—which often hallucinate when presented with factual nuances unseen in their training data—this bot operates under strict _Retrieval-Augmented constraints_. It forces the AI into a "Read and Answer" mode ensuring highly accurate Vietnamese translations even when digesting complex English material.
-
-Enjoy building your digital memory block!
+Chúc bạn xây dựng bộ nhớ kỹ thuật số hiệu quả!
